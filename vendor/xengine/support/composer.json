@@ -1,0 +1,17 @@
+{
+    "name": "xengine/support",
+    "description": "The Illuminate Support package. Only dd",
+    "license": "MIT",
+    "require": {
+        "symfony/var-dumper" : "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "XEngine\\Support\\": ""
+        },
+        "files": [
+            "helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
