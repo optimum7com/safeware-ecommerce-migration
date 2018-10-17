@@ -105,3 +105,10 @@ Route::get('/update-option-set-options','BigCommerceController@updateOptionSetOp
 Route::get('/get-customer-groups','BigCommerceController@getCustomerGroups');
 
 Route::get('/get-single-customer-group','BigCommerceController@getCustomerGroup');
+
+
+
+
+Route::get('create-new-contractor-categories','@BigCommerceController@createNewContractorCategories');
+Route::get('create-new-contractor-categories','@BigCommerceController@createNewContractorCategories');
+//Route::get('','');

@@ -34,10 +34,7 @@ class BigCommerceController extends Controller
         dd($columns);
     }
 
-
-    // Category functions
-
-    public function createCategory(){
+    public function connectToBigCommerce(){
 
         $username = 'optimum7';
         $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
@@ -51,6 +48,15 @@ class BigCommerceController extends Controller
             'api_key'	=> $API_Token
 
         ));
+
+    }
+
+
+    // Category functions
+
+    public function createCategory(){
+
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -239,18 +245,7 @@ class BigCommerceController extends Controller
 
     public function getCategories(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -283,18 +278,7 @@ class BigCommerceController extends Controller
 
         if ($categoryId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -326,15 +310,7 @@ class BigCommerceController extends Controller
     public function deleteCategories(){
 
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-        Bigcommerce::configure(array(
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::deleteAllCategories();
         Bigcommerce::deleteAllProducts();
@@ -346,18 +322,7 @@ class BigCommerceController extends Controller
 
         if ($categoryId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -386,18 +351,7 @@ class BigCommerceController extends Controller
 
     public function createCustomer(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -521,18 +475,7 @@ class BigCommerceController extends Controller
 
     public function getCustomers(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -565,18 +508,7 @@ class BigCommerceController extends Controller
 
         if ($customerId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -608,16 +540,7 @@ class BigCommerceController extends Controller
     public function deleteCustomers(){
 
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::deleteAllCustomers();
     }
@@ -628,18 +551,7 @@ class BigCommerceController extends Controller
 
         if ($customerId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -668,18 +580,7 @@ class BigCommerceController extends Controller
 
     public function createCustomerAddress(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -743,18 +644,7 @@ class BigCommerceController extends Controller
 
         $customerId = Input::get('customerId');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -784,18 +674,7 @@ class BigCommerceController extends Controller
 
     public function getCustomerAddressCheck(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -870,18 +749,7 @@ class BigCommerceController extends Controller
 
     public function createBrand(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -929,18 +797,7 @@ class BigCommerceController extends Controller
 
     public function getBrand(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -973,18 +830,7 @@ class BigCommerceController extends Controller
 
         if ($customerId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -1016,16 +862,7 @@ class BigCommerceController extends Controller
     public function deleteAllBrands(){
 
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::deleteAllCustomers();
     }
@@ -1036,18 +873,7 @@ class BigCommerceController extends Controller
 
         if ($customerId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -1076,18 +902,7 @@ class BigCommerceController extends Controller
 
     public function createProduct(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1411,18 +1226,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -1481,18 +1285,7 @@ class BigCommerceController extends Controller
 
         if ($productId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -1518,18 +1311,7 @@ class BigCommerceController extends Controller
 
     public function getProducts(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1562,18 +1344,7 @@ class BigCommerceController extends Controller
 
         if ($productId){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -1703,18 +1474,7 @@ class BigCommerceController extends Controller
 
     public function getOptions($filter = array()){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1737,18 +1497,7 @@ class BigCommerceController extends Controller
 
     public function createOption($object){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1778,18 +1527,7 @@ class BigCommerceController extends Controller
 
     public function updateOption($id, $object){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1819,18 +1557,7 @@ class BigCommerceController extends Controller
 
     public function getOptionsCount(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1854,18 +1581,7 @@ class BigCommerceController extends Controller
 
         $id = Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1889,18 +1605,7 @@ class BigCommerceController extends Controller
 
         $id = Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1933,18 +1638,7 @@ class BigCommerceController extends Controller
         $id = Input::get('id');
         $option_id = Input::get('option_id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -1968,18 +1662,7 @@ class BigCommerceController extends Controller
 
         $optionId = Input::get('optionId');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2002,18 +1685,7 @@ class BigCommerceController extends Controller
 
     public function getOptionSets($filter = array()){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2038,18 +1710,7 @@ class BigCommerceController extends Controller
 
         $id = Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2074,18 +1735,7 @@ class BigCommerceController extends Controller
 
         $id = Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2108,18 +1758,7 @@ class BigCommerceController extends Controller
 
     public function createOptionSet($object){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2155,18 +1794,7 @@ class BigCommerceController extends Controller
 
         if($start==1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -2208,18 +1836,7 @@ class BigCommerceController extends Controller
 
     public function getOptionSetsCount(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2243,18 +1860,7 @@ class BigCommerceController extends Controller
 
     public function updateOptionSet(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2298,18 +1904,7 @@ class BigCommerceController extends Controller
 
         $id = Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2339,18 +1934,7 @@ class BigCommerceController extends Controller
 
     public function deleteAllOptions(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2382,18 +1966,7 @@ class BigCommerceController extends Controller
 
         $productId = Input::get('productId');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2418,18 +1991,7 @@ class BigCommerceController extends Controller
         $productId = Input::get('productId');
         $productOptionId = Input::get('productOptionId');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2451,18 +2013,7 @@ class BigCommerceController extends Controller
 
     public function createOptionValue($optionId, $object){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2492,18 +2043,7 @@ class BigCommerceController extends Controller
 
     public function deleteAllOptionSets(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2533,18 +2073,7 @@ class BigCommerceController extends Controller
 
     public function updateOptionValue($optionId, $optionValueId, $object){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2579,18 +2108,7 @@ class BigCommerceController extends Controller
 
     public function optionSetProcess(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2681,18 +2199,7 @@ class BigCommerceController extends Controller
 
     public function optionProcess(){
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         Bigcommerce::failOnError();
 
@@ -2767,18 +2274,7 @@ class BigCommerceController extends Controller
 
         $id=Input::get('id');
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         //Bigcommerce::failOnError();
 
@@ -2795,18 +2291,7 @@ class BigCommerceController extends Controller
 
         $product_id=8762;
 
-        $username = 'optimum7';
-        $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-        $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-        $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-        Bigcommerce::configure(array(
-
-            'store_url' => $store_url,
-            'username'	=> $username,
-            'api_key'	=> $API_Token
-
-        ));
+        $this->connectToBigCommerce();
 
         //Bigcommerce::failOnError();
 
@@ -2833,18 +2318,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             //Bigcommerce::failOnError();
 
@@ -2939,18 +2413,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             //Bigcommerce::failOnError();
 
@@ -3045,18 +2508,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             //Bigcommerce::failOnError();
 
@@ -3151,18 +2603,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3262,18 +2703,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3354,18 +2784,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3385,18 +2804,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             //Bigcommerce::failOnError();
            
@@ -3445,18 +2853,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3475,18 +2872,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3505,18 +2891,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3535,18 +2910,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3565,18 +2929,7 @@ class BigCommerceController extends Controller
 
         if ($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
            
@@ -3596,18 +2949,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3652,16 +2994,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3713,16 +3046,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3788,16 +3112,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3861,16 +3176,7 @@ class BigCommerceController extends Controller
 
         if($start == 1){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3896,16 +3202,7 @@ class BigCommerceController extends Controller
 
         if($start == 1 && isset($id)){
 
-            $username = 'optimum7';
-            $store_url = 'https://store-8zcngt4nvy.mybigcommerce.com';
-            $API_PATH = 'https://store-8zcngt4nvy.mybigcommerce.com/api/v2/';
-            $API_Token = 'dc97ea13051f313e78750eb2acf3beb9a324fd91';
-
-            Bigcommerce::configure(array(
-                'store_url' => $store_url,
-                'username'	=> $username,
-                'api_key'	=> $API_Token
-            ));
+            $this->connectToBigCommerce();
 
             Bigcommerce::failOnError();
 
@@ -3985,9 +3282,108 @@ class BigCommerceController extends Controller
         }
     }
 
-    public function deneme(){
+    public function createNewContractorCategories(){
 
-        $customerGroupList = Bigcommerce::getCustomerGroups();
+        $start = Input::get('start');
 
+        $this->connectToBigCommerce();
+
+        Bigcommerce::failOnError();
+
+        $identity = 1661;
+
+        // New contractor category data will be 
+        // $categories = DB::table('job_contracter')->select(DB::raw('DISTINCT job_no'), 'job_no', 'job_description')->get();
+        
+        foreach ($categories as $category){
+
+            $categoryData = array(
+
+                'parent_id' => 1660,
+                'name' => $identity,
+                'description' => '',
+                'sort_order' => 0,
+                'page_title' => $identity,
+                'meta_keywords' => '',
+                'meta_description' => '',
+                'layout_file' => 'category.html',
+                'url' => '/'.$identity.'/'
+            );
+            
+            try {
+
+                $createCategory = Bigcommerce::createCategory((object)$categoryData);
+
+                if($createCategory){
+
+                    $updateLocal = DB::table('job_contracter')->where('job_description',$category->job_description)->update(['BCCategoryId' => $identity]);
+                    $identity++;
+
+                } else {
+
+                    die ('There was an error on category adding process : '.$category->job_description);
+                }
+
+            } catch (Bigcommerce\Api\Error $error) {
+
+                echo 'Error : '.$category->job_description;
+                echo '<br>';
+                print_r($e);
+                
+            }
+        }
+    }
+
+    public function listAllContractorCategories(){
+
+        $start = Input::get('start');
+
+        if($start == 1){
+
+            $this->connectToBigCommerce();
+
+            Bigcommerce::failOnError();
+
+            try {
+
+                $jobContractorCategories = BigCommerce::getCategories();
+
+                dd($jobContractorCategories);
+
+            } catch (Bigcommerce\Api\Error $error) {
+
+                echo 'Error : '.$category->job_description;
+                echo '<br>';
+                print_r($e);
+                
+            }
+        }
+    }
+
+    public function listSingleContractorCategory(){
+
+        $start = Input::get('start');
+        $categoryId = Input::get('categoryId');
+
+        if($start == 1){
+
+            $this->connectToBigCommerce();
+
+            Bigcommerce::failOnError();
+
+            try {
+
+                $jobContractorCategory = BigCommerce::getCategory($categoryId);
+
+                dd($jobContractorCategory);
+
+            } catch (Bigcommerce\Api\Error $error) {
+
+                echo 'Error : '.$category->job_description;
+                echo '<br>';
+                print_r($e);
+                
+            }
+        }
     }
 }
